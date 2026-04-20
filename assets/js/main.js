@@ -21,6 +21,31 @@
     });
   }
 
+  // Mobile: tap-to-open for .has-dropdown submenus (About / Projects)
+  // On desktop (>860px) CSS hover handles it; on mobile we toggle .open
+  document.querySelectorAll('.nav-links .has-dropdown > a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      if (window.matchMedia('(max-width: 860px)').matches) {
+        e.preventDefault();
+        a.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  // Close mobile menu when a non-dropdown link is tapped
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      const parentLi = a.closest('li');
+      const isDropdownParent = parentLi && parentLi.classList.contains('has-dropdown') && a.parentElement === parentLi;
+      if (!isDropdownParent && navLinks && navLinks.classList.contains('open')) {
+        if (window.matchMedia('(max-width: 860px)').matches) {
+          navLinks.classList.remove('open');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
+
   // Highlight nav link matching current page
   const path = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
