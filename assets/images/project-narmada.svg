@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="ns" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2C5378"/>
+      <stop offset="100%" stop-color="#0F2A44"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#ns)"/>
+  <circle cx="680" cy="120" r="44" fill="#F5D99E" opacity=".7"/>
+  <!-- Main tower with curved top -->
+  <path d="M 260 560 L 260 180 Q 260 140 300 140 L 520 140 Q 560 140 560 180 L 560 560 Z" fill="#E8D9A8"/>
+  <path d="M 260 180 Q 260 140 300 140 L 520 140 Q 560 140 560 180" fill="#8D6C29"/>
+  <!-- Windows -->
+  <g fill="#0F2A44" opacity=".6">
+    <g id="nw">
+      <rect x="280" y="200" width="26" height="32"/><rect x="316" y="200" width="26" height="32"/><rect x="352" y="200" width="26" height="32"/><rect x="388" y="200" width="26" height="32"/><rect x="424" y="200" width="26" height="32"/><rect x="460" y="200" width="26" height="32"/><rect x="496" y="200" width="26" height="32"/><rect x="532" y="200" width="26" height="32"/>
+    </g>
+    <use href="#nw" y="44"/><use href="#nw" y="88"/><use href="#nw" y="132"/><use href="#nw" y="176"/><use href="#nw" y="220"/><use href="#nw" y="264"/><use href="#nw" y="308"/>
+  </g>
+  <!-- Entrance -->
+  <rect x="380" y="510" width="80" height="50" fill="#0F2A44"/>
+  <rect x="390" y="520" width="60" height="40" fill="#C9A24A" opacity=".4"/>
+  <!-- Accent strips -->
+  <rect x="260" y="340" width="300" height="6" fill="#C9A24A" opacity=".55"/>
+  <rect x="260" y="480" width="300" height="6" fill="#C9A24A" opacity=".55"/>
+  <rect x="0" y="560" width="800" height="40" fill="#0B1F34"/>
+  <!-- Cars -->
+  <rect x="80" y="530" width="60" height="20" rx="4" fill="#C9A24A" opacity=".5"/>
+  <circle cx="95" cy="556" r="8" fill="#2D1F10"/>
+  <circle cx="125" cy="556" r="8" fill="#2D1F10"/>
+  <rect x="640" y="530" width="70" height="20" rx="4" fill="#1E7F5B" opacity=".5"/>
+  <circle cx="655" cy="556" r="8" fill="#2D1F10"/>
+  <circle cx="695" cy="556" r="8" fill="#2D1F10"/>
+</svg>

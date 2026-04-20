@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gj" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A6F8F"/>
+      <stop offset="100%" stop-color="#0F2A44"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gj)"/>
+  <ellipse cx="200" cy="100" rx="60" ry="16" fill="#FAF7F2" opacity=".25"/>
+  <ellipse cx="600" cy="80" rx="50" ry="14" fill="#FAF7F2" opacity=".18"/>
+  <!-- Three building silhouette -->
+  <rect x="100" y="280" width="180" height="280" fill="#E8D9A8"/>
+  <rect x="100" y="280" width="180" height="14" fill="#8D6C29"/>
+  <rect x="310" y="220" width="200" height="340" fill="#D5BC84"/>
+  <rect x="310" y="220" width="200" height="14" fill="#8D6C29"/>
+  <rect x="540" y="260" width="180" height="300" fill="#E8D9A8"/>
+  <rect x="540" y="260" width="180" height="14" fill="#8D6C29"/>
+  <!-- Windows (left) -->
+  <g fill="#0F2A44" opacity=".55">
+    <rect x="120" y="310" width="22" height="28"/><rect x="150" y="310" width="22" height="28"/><rect x="180" y="310" width="22" height="28"/><rect x="210" y="310" width="22" height="28"/><rect x="240" y="310" width="22" height="28"/>
+    <rect x="120" y="350" width="22" height="28"/><rect x="150" y="350" width="22" height="28"/><rect x="180" y="350" width="22" height="28"/><rect x="210" y="350" width="22" height="28"/><rect x="240" y="350" width="22" height="28"/>
+    <rect x="120" y="390" width="22" height="28"/><rect x="150" y="390" width="22" height="28"/><rect x="180" y="390" width="22" height="28"/><rect x="210" y="390" width="22" height="28"/><rect x="240" y="390" width="22" height="28"/>
+    <rect x="120" y="430" width="22" height="28"/><rect x="150" y="430" width="22" height="28"/><rect x="180" y="430" width="22" height="28"/><rect x="210" y="430" width="22" height="28"/><rect x="240" y="430" width="22" height="28"/>
+    <rect x="120" y="470" width="22" height="28"/><rect x="150" y="470" width="22" height="28"/><rect x="180" y="470" width="22" height="28"/><rect x="210" y="470" width="22" height="28"/><rect x="240" y="470" width="22" height="28"/>
+  </g>
+  <!-- Windows (center) -->
+  <g fill="#0F2A44" opacity=".55">
+    <g id="gc">
+      <rect x="330" y="250" width="22" height="28"/><rect x="360" y="250" width="22" height="28"/><rect x="390" y="250" width="22" height="28"/><rect x="420" y="250" width="22" height="28"/><rect x="450" y="250" width="22" height="28"/><rect x="480" y="250" width="22" height="28"/>
+    </g>
+    <use href="#gc" y="40"/><use href="#gc" y="80"/><use href="#gc" y="120"/><use href="#gc" y="160"/><use href="#gc" y="200"/><use href="#gc" y="240"/>
+  </g>
+  <!-- Windows (right) -->
+  <g fill="#0F2A44" opacity=".55">
+    <rect x="560" y="290" width="22" height="28"/><rect x="590" y="290" width="22" height="28"/><rect x="620" y="290" width="22" height="28"/><rect x="650" y="290" width="22" height="28"/><rect x="680" y="290" width="22" height="28"/>
+    <rect x="560" y="330" width="22" height="28"/><rect x="590" y="330" width="22" height="28"/><rect x="620" y="330" width="22" height="28"/><rect x="650" y="330" width="22" height="28"/><rect x="680" y="330" width="22" height="28"/>
+    <rect x="560" y="370" width="22" height="28"/><rect x="590" y="370" width="22" height="28"/><rect x="620" y="370" width="22" height="28"/><rect x="650" y="370" width="22" height="28"/><rect x="680" y="370" width="22" height="28"/>
+    <rect x="560" y="410" width="22" height="28"/><rect x="590" y="410" width="22" height="28"/><rect x="620" y="410" width="22" height="28"/><rect x="650" y="410" width="22" height="28"/><rect x="680" y="410" width="22" height="28"/>
+    <rect x="560" y="450" width="22" height="28"/><rect x="590" y="450" width="22" height="28"/><rect x="620" y="450" width="22" height="28"/><rect x="650" y="450" width="22" height="28"/><rect x="680" y="450" width="22" height="28"/>
+  </g>
+  <rect x="0" y="560" width="800" height="40" fill="#0B1F34"/>
+  <!-- Trees -->
+  <circle cx="60" cy="520" r="34" fill="#3E8A57"/>
+  <rect x="56" y="520" width="8" height="40" fill="#2D1F10"/>
+  <circle cx="760" cy="520" r="38" fill="#3E8A57"/>
+  <rect x="756" y="520" width="8" height="40" fill="#2D1F10"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="pp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B3A5B"/>
+      <stop offset="100%" stop-color="#0F2A44"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#pp)"/>
+  <rect x="250" y="170" width="300" height="390" fill="#C9A24A" opacity=".22"/>
+  <rect x="300" y="230" width="200" height="330" fill="#C9A24A" opacity=".35"/>
+  <g fill="#0F2A44" opacity=".55">
+    <rect x="320" y="260" width="24" height="32"/>
+    <rect x="356" y="260" width="24" height="32"/>
+    <rect x="392" y="260" width="24" height="32"/>
+    <rect x="428" y="260" width="24" height="32"/>
+    <rect x="464" y="260" width="24" height="32"/>
+    <rect x="320" y="310" width="24" height="32"/>
+    <rect x="356" y="310" width="24" height="32"/>
+    <rect x="392" y="310" width="24" height="32"/>
+    <rect x="428" y="310" width="24" height="32"/>
+    <rect x="464" y="310" width="24" height="32"/>
+    <rect x="320" y="360" width="24" height="32"/>
+    <rect x="356" y="360" width="24" height="32"/>
+    <rect x="392" y="360" width="24" height="32"/>
+    <rect x="428" y="360" width="24" height="32"/>
+    <rect x="464" y="360" width="24" height="32"/>
+    <rect x="320" y="410" width="24" height="32"/>
+    <rect x="356" y="410" width="24" height="32"/>
+    <rect x="392" y="410" width="24" height="32"/>
+    <rect x="428" y="410" width="24" height="32"/>
+    <rect x="464" y="410" width="24" height="32"/>
+    <rect x="320" y="460" width="24" height="32"/>
+    <rect x="356" y="460" width="24" height="32"/>
+    <rect x="392" y="460" width="24" height="32"/>
+    <rect x="428" y="460" width="24" height="32"/>
+    <rect x="464" y="460" width="24" height="32"/>
+  </g>
+  <text x="400" y="130" font-family="Playfair Display, Georgia, serif" font-size="28" fill="#C9A24A" text-anchor="middle" opacity=".8">COMING SOON</text>
+  <rect x="0" y="560" width="800" height="40" fill="#0B1F34"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#FAF7F2"/>
+  <!-- Outer walls -->
+  <rect x="80" y="80" width="640" height="440" fill="none" stroke="#0F2A44" stroke-width="8"/>
+  <!-- Rooms -->
+  <g stroke="#0F2A44" stroke-width="4" fill="none">
+    <!-- Living + Dining (open) -->
+    <line x1="360" y1="80" x2="360" y2="340"/>
+    <!-- Kitchen wall -->
+    <line x1="360" y1="240" x2="500" y2="240"/>
+    <line x1="500" y1="80" x2="500" y2="240"/>
+    <!-- Master bedroom -->
+    <line x1="500" y1="240" x2="720" y2="240"/>
+    <!-- Second bedroom -->
+    <line x1="360" y1="340" x2="720" y2="340"/>
+    <line x1="540" y1="340" x2="540" y2="520"/>
+    <!-- Bathroom wall -->
+    <line x1="80" y1="340" x2="360" y2="340"/>
+    <line x1="220" y1="340" x2="220" y2="520"/>
+  </g>
+  <!-- Labels -->
+  <g font-family="Inter, sans-serif" font-size="18" fill="#0F2A44">
+    <text x="220" y="200" text-anchor="middle" font-weight="600">LIVING / DINING</text>
+    <text x="220" y="220" text-anchor="middle" font-size="13" fill="#64748B">14'0" x 19'0"</text>
+    <text x="430" y="165" text-anchor="middle" font-weight="600">KITCHEN</text>
+    <text x="430" y="185" text-anchor="middle" font-size="13" fill="#64748B">9'0" x 10'0"</text>
+    <text x="610" y="165" text-anchor="middle" font-weight="600">M. BEDROOM</text>
+    <text x="610" y="185" text-anchor="middle" font-size="13" fill="#64748B">12'0" x 14'0"</text>
+    <text x="540" y="430" text-anchor="middle" font-weight="600">BEDROOM 2</text>
+    <text x="540" y="448" text-anchor="middle" font-size="13" fill="#64748B">11'0" x 12'0"</text>
+    <text x="150" y="420" text-anchor="middle" font-weight="600">BATH</text>
+    <text x="380" y="420" text-anchor="middle" font-weight="600">UTILITY</text>
+  </g>
+  <!-- Furniture hints -->
+  <g fill="#C9A24A" opacity=".35">
+    <rect x="120" y="240" width="130" height="50" rx="6"/>
+    <rect x="560" y="130" width="130" height="70" rx="6"/>
+    <rect x="440" y="420" width="90" height="70" rx="6"/>
+    <rect x="230" y="260" width="100" height="60" rx="4"/>
+  </g>
+  <!-- Door arcs -->
+  <g stroke="#0F2A44" stroke-width="2" fill="none" opacity=".6">
+    <path d="M 160 340 A 40 40 0 0 1 200 380"/>
+    <path d="M 340 340 A 40 40 0 0 1 380 380"/>
+    <path d="M 500 240 A 30 30 0 0 1 530 270"/>
+  </g>
+  <!-- N arrow -->
+  <g transform="translate(740,110)">
+    <circle r="18" fill="#0F2A44"/>
+    <text y="6" text-anchor="middle" fill="#C9A24A" font-family="Playfair Display,serif" font-weight="600" font-size="18">N</text>
+  </g>
+  <text x="400" y="50" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" fill="#0F2A44" font-weight="600">2 BHK · Typical Floor Plan</text>
+  <text x="400" y="570" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748B">Indicative only. Not to scale.</text>
+</svg>

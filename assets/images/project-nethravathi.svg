@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#24557F"/>
+      <stop offset="100%" stop-color="#0F2A44"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F2EDE2"/>
+      <stop offset="100%" stop-color="#C9A24A"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sg)"/>
+  <!-- Clouds -->
+  <ellipse cx="200" cy="90" rx="80" ry="16" fill="#FAF7F2" opacity=".15"/>
+  <ellipse cx="640" cy="70" rx="70" ry="14" fill="#FAF7F2" opacity=".12"/>
+  <!-- Lower building -->
+  <rect x="150" y="250" width="220" height="310" fill="url(#bg)" opacity=".9"/>
+  <rect x="150" y="250" width="220" height="14" fill="#8D6C29"/>
+  <!-- Main building -->
+  <rect x="360" y="180" width="290" height="380" fill="url(#bg)"/>
+  <rect x="360" y="180" width="290" height="18" fill="#8D6C29"/>
+  <!-- Windows main -->
+  <g fill="#0F2A44" opacity=".6">
+    <g id="bw">
+      <rect x="378" y="220" width="28" height="36"/>
+      <rect x="418" y="220" width="28" height="36"/>
+      <rect x="458" y="220" width="28" height="36"/>
+      <rect x="498" y="220" width="28" height="36"/>
+      <rect x="538" y="220" width="28" height="36"/>
+      <rect x="578" y="220" width="28" height="36"/>
+      <rect x="618" y="220" width="28" height="36"/>
+    </g>
+    <use href="#bw" y="50"/>
+    <use href="#bw" y="100"/>
+    <use href="#bw" y="150"/>
+    <use href="#bw" y="200"/>
+    <use href="#bw" y="250"/>
+  </g>
+  <!-- Lower windows -->
+  <g fill="#0F2A44" opacity=".55">
+    <rect x="170" y="290" width="26" height="30"/>
+    <rect x="208" y="290" width="26" height="30"/>
+    <rect x="246" y="290" width="26" height="30"/>
+    <rect x="284" y="290" width="26" height="30"/>
+    <rect x="322" y="290" width="26" height="30"/>
+    <rect x="170" y="340" width="26" height="30"/>
+    <rect x="208" y="340" width="26" height="30"/>
+    <rect x="246" y="340" width="26" height="30"/>
+    <rect x="284" y="340" width="26" height="30"/>
+    <rect x="322" y="340" width="26" height="30"/>
+    <rect x="170" y="390" width="26" height="30"/>
+    <rect x="208" y="390" width="26" height="30"/>
+    <rect x="246" y="390" width="26" height="30"/>
+    <rect x="284" y="390" width="26" height="30"/>
+    <rect x="322" y="390" width="26" height="30"/>
+    <rect x="170" y="440" width="26" height="30"/>
+    <rect x="208" y="440" width="26" height="30"/>
+    <rect x="246" y="440" width="26" height="30"/>
+    <rect x="284" y="440" width="26" height="30"/>
+    <rect x="322" y="440" width="26" height="30"/>
+  </g>
+  <rect x="480" y="520" width="60" height="40" fill="#0F2A44"/>
+  <!-- Ground -->
+  <rect x="0" y="560" width="800" height="40" fill="#0B1F34"/>
+  <!-- Trees -->
+  <circle cx="90" cy="520" r="44" fill="#1E7F5B" opacity=".8"/>
+  <rect x="86" y="520" width="8" height="40" fill="#2D1F10"/>
+  <circle cx="720" cy="510" r="50" fill="#1E7F5B" opacity=".8"/>
+  <rect x="716" y="510" width="8" height="50" fill="#2D1F10"/>
+</svg>

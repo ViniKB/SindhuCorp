@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A9D0E5"/>
+      <stop offset="100%" stop-color="#E5DFD0"/>
+    </linearGradient>
+    <linearGradient id="ggrass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3E8A57"/>
+      <stop offset="100%" stop-color="#1E5E3A"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="380" fill="url(#gsky)"/>
+  <rect y="380" width="800" height="220" fill="url(#ggrass)"/>
+  <!-- Background building -->
+  <rect x="50" y="120" width="280" height="260" fill="#1B3A5B" opacity=".7"/>
+  <g fill="#C9A24A" opacity=".5">
+    <rect x="70" y="150" width="16" height="22"/><rect x="100" y="150" width="16" height="22"/><rect x="130" y="150" width="16" height="22"/><rect x="160" y="150" width="16" height="22"/><rect x="190" y="150" width="16" height="22"/><rect x="220" y="150" width="16" height="22"/><rect x="250" y="150" width="16" height="22"/><rect x="280" y="150" width="16" height="22"/>
+    <rect x="70" y="190" width="16" height="22"/><rect x="100" y="190" width="16" height="22"/><rect x="130" y="190" width="16" height="22"/><rect x="160" y="190" width="16" height="22"/><rect x="190" y="190" width="16" height="22"/><rect x="220" y="190" width="16" height="22"/><rect x="250" y="190" width="16" height="22"/><rect x="280" y="190" width="16" height="22"/>
+    <rect x="70" y="230" width="16" height="22"/><rect x="100" y="230" width="16" height="22"/><rect x="130" y="230" width="16" height="22"/><rect x="160" y="230" width="16" height="22"/><rect x="190" y="230" width="16" height="22"/><rect x="220" y="230" width="16" height="22"/><rect x="250" y="230" width="16" height="22"/><rect x="280" y="230" width="16" height="22"/>
+    <rect x="70" y="270" width="16" height="22"/><rect x="100" y="270" width="16" height="22"/><rect x="130" y="270" width="16" height="22"/><rect x="160" y="270" width="16" height="22"/><rect x="190" y="270" width="16" height="22"/><rect x="220" y="270" width="16" height="22"/><rect x="250" y="270" width="16" height="22"/><rect x="280" y="270" width="16" height="22"/>
+    <rect x="70" y="310" width="16" height="22"/><rect x="100" y="310" width="16" height="22"/><rect x="130" y="310" width="16" height="22"/><rect x="160" y="310" width="16" height="22"/><rect x="190" y="310" width="16" height="22"/><rect x="220" y="310" width="16" height="22"/><rect x="250" y="310" width="16" height="22"/><rect x="280" y="310" width="16" height="22"/>
+  </g>
+  <!-- Walking path -->
+  <path d="M 0 520 Q 400 460 800 540 L 800 600 L 0 600 Z" fill="#C8BFA4"/>
+  <!-- Trees -->
+  <g>
+    <rect x="450" y="280" width="10" height="100" fill="#2D1F10"/>
+    <circle cx="455" cy="270" r="60" fill="#3E8A57"/>
+    <circle cx="430" cy="260" r="40" fill="#2D9466"/>
+    <circle cx="480" cy="250" r="40" fill="#2D9466"/>
+  </g>
+  <g>
+    <rect x="600" y="290" width="8" height="90" fill="#2D1F10"/>
+    <circle cx="604" cy="280" r="44" fill="#3E8A57"/>
+    <circle cx="586" cy="275" r="28" fill="#2D9466"/>
+  </g>
+  <g>
+    <rect x="720" y="310" width="8" height="70" fill="#2D1F10"/>
+    <circle cx="724" cy="300" r="36" fill="#3E8A57"/>
+  </g>
+  <!-- Bench -->
+  <g>
+    <rect x="120" y="470" width="100" height="14" fill="#8B6A3E"/>
+    <rect x="120" y="450" width="100" height="10" fill="#8B6A3E"/>
+    <rect x="128" y="484" width="6" height="30" fill="#2D1F10"/>
+    <rect x="206" y="484" width="6" height="30" fill="#2D1F10"/>
+  </g>
+  <!-- Lamp post -->
+  <g>
+    <rect x="380" y="410" width="6" height="130" fill="#2D1F10"/>
+    <circle cx="383" cy="400" r="14" fill="#C9A24A"/>
+  </g>
+  <!-- Flower beds -->
+  <ellipse cx="500" cy="490" rx="80" ry="14" fill="#C9A24A" opacity=".5"/>
+  <ellipse cx="670" cy="500" rx="70" ry="12" fill="#D14343" opacity=".4"/>
+</svg>

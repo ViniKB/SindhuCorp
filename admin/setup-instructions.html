@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup — Enquiry Logging (Excel + Email)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0F2A44;
+      --gold: #C9A24A;
+      --ivory: #FAF7F2;
+      --light-gold: #F3E9C9;
+      --muted: #5C6773;
+      --line: #E5E7EB;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--navy);
+      margin: 0;
+      background: var(--ivory);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 40px 24px 80px; }
+    header.top {
+      background: var(--navy); color: #fff;
+      padding: 40px 24px; margin-bottom: 32px;
+    }
+    header.top .inner { max-width: 880px; margin: 0 auto; }
+    header.top h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px; margin: 0 0 6px;
+      color: #fff;
+    }
+    header.top p { margin: 0; color: var(--gold); font-size: 15px; }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px; margin: 48px 0 12px;
+      color: var(--navy);
+    }
+    .step {
+      background: #fff; border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px; padding: 22px 26px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 2px rgba(15, 42, 68, 0.04);
+    }
+    .step .num {
+      display: inline-block;
+      background: var(--navy); color: #fff;
+      width: 28px; height: 28px; border-radius: 50%;
+      text-align: center; line-height: 28px;
+      font-weight: 700; font-size: 14px;
+      margin-right: 10px;
+    }
+    .step h3 { display: inline; font-size: 17px; margin: 0; }
+    .step .body { margin-top: 12px; color: var(--muted); font-size: 14.5px; }
+    .step ol, .step ul { padding-left: 22px; }
+    .step li { margin-bottom: 6px; }
+    code, pre {
+      font-family: 'SF Mono', Menlo, Consolas, monospace;
+      background: #f4efe3;
+      color: #3d2d0b;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 13px;
+    }
+    pre {
+      display: block; padding: 14px 18px;
+      overflow-x: auto; white-space: pre-wrap; word-break: break-all;
+      border: 1px solid #e7dcbd;
+    }
+    .tip {
+      background: var(--light-gold); border-radius: 8px;
+      padding: 14px 18px; font-size: 14px;
+      margin: 14px 0;
+    }
+    .tip strong { color: var(--navy); }
+    .file-ref {
+      display: inline-block; background: #f4efe3;
+      padding: 3px 10px; border-radius: 4px;
+      font-family: monospace; font-size: 13px;
+      color: #3d2d0b; border: 1px solid #e7dcbd;
+    }
+    .files {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+      margin-top: 14px;
+    }
+    .file-card {
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 10px; padding: 16px;
+    }
+    .file-card .fname {
+      font-family: monospace; font-size: 13px;
+      color: var(--navy); font-weight: 700;
+      display: block; margin-bottom: 4px;
+    }
+    .file-card p { margin: 0; color: var(--muted); font-size: 13px; }
+    .badge {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-weight: 700; font-size: 11px; text-transform: uppercase;
+      letter-spacing: .08em; padding: 3px 10px; border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    a { color: #2A6CB6; }
+    .done {
+      background: #CDEFD7; border-radius: 10px;
+      padding: 18px 22px; margin-top: 24px;
+      border-left: 4px solid #22663A;
+    }
+    .done h3 { margin: 0 0 6px; color: #22663A; font-family: 'Playfair Display', serif; }
+    .done p { margin: 0; color: #1b4a2a; font-size: 14px; }
+    @media (max-width: 640px) {
+      .files { grid-template-columns: 1fr; }
+      header.top h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="inner">
+    <div class="badge">Admin setup</div>
+    <h1>Enquiry Logging Setup</h1>
+    <p>Route every contact-form submission to your email and an Excel sheet — free, no server required</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <p style="font-size: 16px;">
+    This one-time setup takes about <strong>10 minutes</strong>. After it's done,
+    every enquiry submitted on <code>sindhucorporation.com</code> will:
+  </p>
+  <ul style="font-size: 15px;">
+    <li>Email you (and optionally a second person) with the enquiry details</li>
+    <li>Add a new row to a Google Sheet (which you can download as <strong>.xlsx</strong> anytime)</li>
+    <li>Auto-assign a "New" status so you can track follow-ups</li>
+  </ul>
+
+  <div class="tip">
+    <strong>What you need:</strong> a Google account (any Gmail works), plus the two files already created for you in the
+    <span class="file-ref">admin/</span> folder of this project.
+  </div>
+
+  <div class="files">
+    <div class="file-card">
+      <span class="fname">admin/enquiry-log.xlsx</span>
+      <p>The Excel template — Enquiries sheet, Dashboard, and instructions. Open this once to see the structure.</p>
+    </div>
+    <div class="file-card">
+      <span class="fname">admin/google-apps-script.gs</span>
+      <p>The webhook code — receives form data, writes it to the sheet, emails you.</p>
+    </div>
+  </div>
+
+  <h2>Step-by-step</h2>
+
+  <div class="step">
+    <span class="num">1</span><h3>Upload the Excel to Google Drive</h3>
+    <div class="body">
+      <ol>
+        <li>Go to <a href="https://drive.google.com" target="_blank" rel="noopener">drive.google.com</a>.</li>
+        <li>Click <strong>New → File upload</strong> and choose <span class="file-ref">admin/enquiry-log.xlsx</span>.</li>
+        <li>When it appears in your Drive, <strong>right-click it → Open with → Google Sheets</strong>.</li>
+        <li>Google Sheets will make a linked Google Sheet copy. Keep this tab open — we'll work in it.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">2</span><h3>Open the Apps Script editor</h3>
+    <div class="body">
+      <ol>
+        <li>Inside the Google Sheet, click <strong>Extensions → Apps Script</strong>.</li>
+        <li>A new tab opens with a file called <code>Code.gs</code>. Delete everything inside it.</li>
+        <li>Open <span class="file-ref">admin/google-apps-script.gs</span> on your computer, select all, copy, and paste it into the editor.</li>
+        <li>Click the floppy-disk <strong>Save</strong> icon. Name the project "Sindhu Enquiry Webhook".</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">3</span><h3>Put your email address in the script</h3>
+    <div class="body">
+      Near the top of the pasted code you'll see:
+      <pre>const NOTIFY_EMAIL   = 'info@sindhucorporation.com';
+const NOTIFY_EMAIL_2 = '';</pre>
+      Change these to the email address(es) that should receive enquiries. Save again.
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">4</span><h3>Deploy the script as a Web App</h3>
+    <div class="body">
+      <ol>
+        <li>In the Apps Script editor, click <strong>Deploy → New deployment</strong>.</li>
+        <li>Click the gear icon → choose <strong>Web app</strong>.</li>
+        <li>Fill in:
+          <ul>
+            <li><strong>Description:</strong> "Sindhu Enquiry Webhook v1"</li>
+            <li><strong>Execute as:</strong> Me (your Google account)</li>
+            <li><strong>Who has access:</strong> Anyone</li>
+          </ul>
+        </li>
+        <li>Click <strong>Deploy</strong>. Google will ask for permissions — approve them (click "Advanced" if you see a warning, then "Go to Sindhu Enquiry Webhook (unsafe)" — it's your own script, it's safe).</li>
+        <li>You'll see a <strong>Web app URL</strong>. It looks like:
+          <pre>https://script.google.com/macros/s/AKfyc............/exec</pre>
+          Copy it.
+        </li>
+      </ol>
+      <div class="tip">
+        <strong>Tip:</strong> Paste the URL into a browser tab. You should see <code>{"ok":true,"service":"Sindhu Corporation Enquiry Webhook"}</code>. That confirms the webhook is live.
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">5</span><h3>Wire the website to the webhook</h3>
+    <div class="body">
+      <ol>
+        <li>Open <span class="file-ref">assets/js/main.js</span> in your editor.</li>
+        <li>Near the top you'll find:
+          <pre>const ENQUIRY_WEBHOOK_URL = '';</pre>
+        </li>
+        <li>Paste your Web app URL between the quotes:
+          <pre>const ENQUIRY_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfyc..../exec';</pre>
+        </li>
+        <li>Save the file and re-upload to your hosting (or commit and push if using GitHub Pages / Netlify / Vercel).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">6</span><h3>Test it end-to-end</h3>
+    <div class="body">
+      <ol>
+        <li>Open <span class="file-ref">contact.html</span> on your live site.</li>
+        <li>Submit a test enquiry (use your own name/email so you can verify).</li>
+        <li>Within a few seconds you should:
+          <ul>
+            <li>See an email in your inbox with subject <em>"🏠 New Enquiry #1 — ..."</em></li>
+            <li>See a new row in the Google Sheet's <strong>Enquiries</strong> tab with status "New"</li>
+            <li>See the <strong>Dashboard</strong> tab counters tick up</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <h2>Daily use</h2>
+
+  <div class="step">
+    <span class="num">✓</span><h3>Managing leads</h3>
+    <div class="body">
+      Work directly in the Google Sheet. Edit the <strong>Status</strong> column as you progress each lead:
+      <ul>
+        <li><strong>New</strong> → just arrived</li>
+        <li><strong>Contacted</strong> → you've called/emailed them</li>
+        <li><strong>Site Visit</strong> → visit booked</li>
+        <li><strong>Booked</strong> → deal closed</li>
+        <li><strong>Closed - Lost</strong> → did not convert</li>
+      </ul>
+      Colour-coding will update automatically.
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">⬇</span><h3>Download as Excel anytime</h3>
+    <div class="body">
+      In the Google Sheet: <strong>File → Download → Microsoft Excel (.xlsx)</strong>.
+      You now have a local <code>.xlsx</code> backup of every enquiry.
+    </div>
+  </div>
+
+  <div class="done">
+    <h3>That's it.</h3>
+    <p>From the moment the webhook URL is pasted into <code>main.js</code> and the site is re-deployed, every enquiry flows automatically into your inbox and the Excel log. No manual copying required.</p>
+  </div>
+
+  <p style="margin-top: 32px; color: var(--muted); font-size: 13px; text-align: center;">
+    Sindhu Corporation · Built on Google Apps Script + Sheets · Free forever for this scale
+  </p>
+</div>
+
+</body>
+</html>
