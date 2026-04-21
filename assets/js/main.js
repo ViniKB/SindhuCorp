@@ -263,4 +263,56 @@
   // Year in footer
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
+
+  // ===== Completed Projects Banner (auto-rotating) =====
+  const cb = document.querySelector('.completed-banner');
+  if (cb) {
+    const slides = cb.querySelectorAll('.cb-slide');
+    const dots = cb.querySelectorAll('.cb-dot');
+    const prev = cb.querySelector('.cb-prev');
+    const next = cb.querySelector('.cb-next');
+    const bar = cb.querySelector('.cb-progress-bar');
+    const DURATION = 5000; // 5s per slide
+    let current = 0;
+    let timerStart = Date.now();
+    let paused = false;
+
+    const goTo = (i) => {
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => s.classList.toggle('is-active', n === current));
+      dots.forEach((d, n) => d.classList.toggle('is-active', n === current));
+      timerStart = Date.now();
+      if (bar) bar.style.width = '0%';
+    };
+
+    const tick = () => {
+      if (!paused) {
+        const elapsed = Date.now() - timerStart;
+        const pct = Math.min(100, (elapsed / DURATION) * 100);
+        if (bar) bar.style.width = pct + '%';
+        if (elapsed >= DURATION) goTo(current + 1);
+      }
+      requestAnimationFrame(tick);
+    };
+
+    dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+    if (prev) prev.addEventListener('click', () => goTo(current - 1));
+    if (next) next.addEventListener('click', () => goTo(current + 1));
+
+    cb.addEventListener('mouseenter', () => { paused = true; });
+    cb.addEventListener('mouseleave', () => { paused = false; timerStart = Date.now() - (parseFloat(bar && bar.style.width) || 0) / 100 * DURATION; });
+
+    // Touch swipe for mobile
+    let touchStartX = 0;
+    cb.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    cb.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1));
+    });
+
+    // Pause when tab is hidden
+    document.addEventListener('visibilitychange', () => { paused = document.hidden; if (!paused) timerStart = Date.now(); });
+
+    requestAnimationFrame(tick);
+  }
 })();

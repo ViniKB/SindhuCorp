@@ -7,13 +7,16 @@
   --navy: #0F2A44;
   --navy-dark: #081A2C;
   --navy-soft: #1B3A5B;
+  --orange: #B5541E;
+  --orange-dark: #8C3E13;
+  --orange-soft: #D8743A;
   --gold: #C9A24A;
   --gold-dark: #A6842F;
-  --ivory: #FAF7F2;
-  --ivory-dark: #F2EDE2;
+  --ivory: #FFFFFF;
+  --ivory-dark: #FFF5EB;
   --ink: #1E293B;
   --muted: #64748B;
-  --line: #E5E0D5;
+  --line: #F0E4D4;
   --white: #ffffff;
   --success: #1E7F5B;
   --shadow-sm: 0 2px 6px rgba(15, 42, 68, 0.08);
@@ -118,7 +121,7 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 247, 242, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
@@ -2111,3 +2114,512 @@ img, iframe, video, svg { max-width: 100%; }
 @media (max-width: 860px) {
   a, button, .btn, .filter-chip { min-height: 40px; }
 }
+
+/* ================================================================
+   BRAND PALETTE v2 — Orange · White · Gold (navy kept for dark)
+   Orange becomes the primary action color; gold stays as decorative
+   accent; dark sections remain navy. Overrides below intentionally
+   live at the bottom so they win the cascade.
+   ================================================================ */
+
+/* ----- Primary buttons / CTAs now use rust-orange ----- */
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+}
+.btn-primary:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+  color: #fff;
+}
+
+/* Outline button on dark backgrounds adopts orange hover for CTA consistency */
+.section-dark .btn-outline { color: var(--white); border-color: rgba(255,255,255,.5); }
+.section-dark .btn-outline:hover { background: var(--orange); border-color: var(--orange); color: #fff; }
+
+/* Ghost button on hero stays white/gold-ish for premium contrast (unchanged) */
+
+/* ----- Nav active & hover underline in orange ----- */
+.nav-links a.active,
+.nav-links a:hover { color: var(--orange-dark); }
+.nav-links a.active::after,
+.nav-links a:hover::after { background: var(--orange); }
+
+/* ----- Hero accent text + badge + pulse dot ----- */
+.hero h1 em { color: var(--orange-soft); }
+.hero-badge {
+  color: var(--orange-soft);
+  border-color: rgba(216,116,58,.45);
+}
+.hero-badge .dot {
+  background: var(--orange-soft);
+  box-shadow: 0 0 0 4px rgba(216,116,58,.22);
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(216,116,58,.22); }
+  50% { box-shadow: 0 0 0 8px rgba(216,116,58,.05); }
+}
+.hero-stats .stat-num { color: var(--orange-soft); }
+
+/* ----- Eyebrow label: orange-first, gold-second on dark ----- */
+.eyebrow { color: var(--orange); }
+.section-dark .eyebrow { color: var(--orange-soft); }
+
+/* ----- Section background replacement ----- */
+body { background: var(--ivory); }         /* now pure white */
+.section-ivory { background: var(--ivory-dark); }  /* warm off-white */
+
+/* ----- Links in prose ----- */
+a { color: var(--navy); }
+a:hover { color: var(--orange-dark); }
+.section-dark a { color: var(--orange-soft); }
+.section-dark a:hover { color: #fff; }
+
+/* ----- Feature card icons: orange gradient ----- */
+.feature-icon {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-soft) 100%);
+  color: #fff;
+}
+
+/* ----- Filter chips ----- */
+.filter-chip.active,
+.filter-chip:hover {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+}
+
+/* ----- Project status pills ----- */
+.pill-upcoming { background: var(--orange); color: #fff; }
+.pill-ongoing { background: var(--gold); color: var(--navy-dark); }
+.pill-completed { background: #E8E2D6; color: var(--navy); }
+
+/* ----- Contact info icons, ps-val accent, cta-band ----- */
+.contact-item .ci-icon {
+  background: var(--orange);
+  color: #fff;
+}
+.cta-band {
+  background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%);
+  color: #fff;
+}
+.cta-band h2, .cta-band p { color: #fff; }
+.cta-band .btn-primary {
+  background: #fff;
+  color: var(--orange-dark);
+  border-color: #fff;
+}
+.cta-band .btn-primary:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+/* ----- Form focus state ----- */
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(181,84,30,.15);
+  outline: none;
+}
+
+/* ----- Testimonial stars + quote ----- */
+.testimonial-stars { color: var(--orange); }
+.testimonial-card::before { color: var(--orange-soft); }
+
+/* ----- Awards badge icons ----- */
+.award-badge { background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%); color:#fff; }
+
+/* ----- EMI calc slider thumb ----- */
+input[type="range"]::-webkit-slider-thumb { background: var(--orange) !important; }
+input[type="range"]::-moz-range-thumb { background: var(--orange) !important; }
+.emi-result { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%); }
+.emi-result-value { color: var(--orange-soft); }
+.emi-val { color: var(--orange-dark); }
+
+/* ----- Job cards gold→orange left border ----- */
+.job-card { border-left-color: var(--orange); }
+
+/* ----- Blog card accent ----- */
+.blog-card .blog-eyebrow { color: var(--orange); }
+
+/* ----- Floating Call CTA uses navy for call button (warmer contrast vs orange) ----- */
+.float-cta .fab-call { background: var(--navy); }
+
+/* ----- Logo mark: keep navy bg but switch "S" to orange (brand pop on white header) ----- */
+.logo-mark { color: var(--orange-soft); }
+
+/* ----- Info blocks / tagline bands / timeline year colour ----- */
+.timeline-item .year { color: var(--orange-dark); }
+.timeline-item::before { background: var(--orange); }
+.tagline-band p { color: var(--orange-soft); }
+
+/* ----- Social row hover ----- */
+.social-row a:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+
+/* ----- "View all projects →" accent in dropdown ----- */
+.nav-links .dropdown a.view-all { color: var(--orange-dark); }
+
+/* ----- Misc rollover of subtle gold accents to orange for stronger brand recall ----- */
+.stats-strip .num span[data-count] { color: var(--orange-soft); }
+
+/* ================================================================
+   BRAND PALETTE v3 — Orange DOMINANT
+   Orange now owns the hero, footer, CTA bands, testimonial band,
+   tagline band, EMI result, split-media, and all formerly-navy
+   feature surfaces. Gold becomes the accent on orange backgrounds.
+   Navy is demoted to tiny touches (logo-mark bg for contrast).
+   ================================================================ */
+
+/* --- Hero: rich orange gradient instead of navy --- */
+.hero {
+  background: linear-gradient(135deg, #8C3E13 0%, #B5541E 45%, #D8743A 100%) !important;
+}
+.hero-badge { color: #FFE9C9; border-color: rgba(255,233,201,.45); }
+.hero-badge .dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(201,162,74,.28); }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(201,162,74,.28); }
+  50%      { box-shadow: 0 0 0 8px rgba(201,162,74,.05); }
+}
+.hero h1 em { color: var(--gold); }
+.hero-stats .stat-num { color: var(--gold); }
+
+/* --- Any "section-dark" now reads as orange --- */
+.section-dark { background: var(--orange-dark) !important; color: #fff; }
+.section-dark h1, .section-dark h2, .section-dark h3 { color: #fff; }
+.section-dark p { color: rgba(255,255,255,.9); }
+.section-dark .eyebrow { color: var(--gold); }
+.section-dark a { color: var(--gold); }
+.section-dark a:hover { color: #fff; }
+.section-dark .btn-outline { color: #fff; border-color: rgba(255,255,255,.6); }
+.section-dark .btn-outline:hover { background: var(--gold); color: var(--orange-dark); border-color: var(--gold); }
+
+/* --- Footer: deep rust instead of navy --- */
+.site-footer { background: var(--orange-dark) !important; color: rgba(255,255,255,.9); }
+.site-footer h4 { color: #fff; }
+.site-footer a { color: rgba(255,255,255,.85); }
+.site-footer a:hover { color: var(--gold); }
+.social-row a { border-color: rgba(255,255,255,.35); color: #fff; }
+.social-row a:hover { background: var(--gold); color: var(--orange-dark); border-color: var(--gold); }
+
+/* --- Tagline band --- */
+.tagline-band {
+  background: linear-gradient(135deg, #8C3E13 0%, #B5541E 100%) !important;
+}
+.tagline-band p { color: var(--gold) !important; }
+
+/* --- Testimonials band (was navy gradient) --- */
+.testimonials-section,
+.testimonial-band {
+  background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%) !important;
+}
+
+/* --- EMI result card: orange instead of navy --- */
+.emi-result {
+  background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%) !important;
+}
+.emi-result-value { color: var(--gold) !important; }
+
+/* --- Split-media placeholder block --- */
+.split-media {
+  background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange-soft) 100%) !important;
+}
+.split-media-inner { color: var(--gold); border-color: rgba(255,224,178,.4); }
+
+/* --- CTA band (already orange gradient, kept) --- */
+.cta-band .btn-primary { background: #fff; color: var(--orange-dark); border-color: #fff; }
+.cta-band .btn-primary:hover { background: var(--gold); color: var(--orange-dark); border-color: var(--gold); }
+
+/* --- Stats strip numbers pop in white on orange sections, orange on white sections --- */
+.stats-strip .num { color: var(--orange); }
+.section-dark .stats-strip .num,
+.hero .stats-strip .num { color: var(--gold); }
+
+/* --- Project status pill: "Upcoming" now reversed (gold on orange reads weakly, keep orange on white) --- */
+.status-upcoming { background: var(--orange); color: #fff; }
+.pill-upcoming { background: var(--orange); color: #fff; }
+
+/* --- Logo mark: orange block with white "S" for unmistakable brand --- */
+.logo-mark { background: var(--orange) !important; color: #fff !important; }
+
+/* --- Filter chip active state (already orange, reaffirm) --- */
+.filter-chip.active { background: var(--orange) !important; color: #fff !important; border-color: var(--orange) !important; }
+
+/* --- Lightbox close/nav hover: gold circle on orange context --- */
+.lightbox-close:hover,
+.lightbox-nav:hover { background: var(--gold); color: var(--orange-dark); border-color: var(--gold); }
+
+/* --- Outline button primary look on white bg: orange outline --- */
+.btn-outline { color: var(--orange-dark); border-color: var(--orange); }
+.btn-outline:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+
+/* --- Primary links in prose on white: orange instead of navy --- */
+a { color: var(--orange-dark); }
+a:hover { color: var(--orange); }
+
+/* --- Dropdown hover accent --- */
+.dropdown a:hover,
+.dropdown a:focus { background: #FFF1E6; color: var(--orange-dark); }
+
+/* --- Floating Call button: orange (so both FABs wear brand colour; WhatsApp stays green) --- */
+.float-cta .fab-call { background: var(--orange) !important; }
+.float-cta .fab-call:hover { background: var(--orange-dark) !important; }
+
+/* --- Nav active pill underline strengthened --- */
+.nav-links a.active { color: var(--orange-dark); font-weight: 600; }
+
+/* --- Dark-section eyebrow & cards: gold text pops on orange --- */
+.section-dark .feature { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); }
+.section-dark .feature h3 { color: #fff; }
+.section-dark .feature p { color: rgba(255,255,255,.82); }
+
+/* ================================================================
+   COMPLETED PROJECTS BANNER (auto-rotating slideshow)
+   ================================================================ */
+.completed-banner {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 52vw, 520px);
+  overflow: hidden;
+  background: var(--orange-dark);
+  isolation: isolate;
+}
+.cb-track {
+  position: absolute;
+  inset: 0;
+}
+.cb-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .9s ease, visibility .9s ease;
+}
+.cb-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+.cb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.04);
+  animation: cbZoom 8s ease-out forwards;
+}
+.cb-slide.is-active .cb-img {
+  animation: cbZoom 8s ease-out forwards;
+}
+@keyframes cbZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+.cb-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(140,62,19,.55) 0%, rgba(140,62,19,.25) 40%, rgba(0,0,0,0) 75%),
+    linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.72) 100%);
+}
+.cb-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 56px clamp(20px, 6vw, 80px) 72px;
+  color: #fff;
+  max-width: 900px;
+}
+.cb-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 6px 14px;
+  background: var(--gold);
+  color: var(--orange-dark);
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+}
+.cb-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 10px;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
+}
+.cb-sub {
+  font-size: clamp(.95rem, 1.4vw, 1.1rem);
+  color: rgba(255,255,255,.92);
+  margin: 0 0 22px;
+  max-width: 620px;
+  text-shadow: 0 1px 8px rgba(0,0,0,.3);
+}
+.cb-cta {
+  align-self: flex-start;
+  background: #fff !important;
+  color: var(--orange-dark) !important;
+  border-color: #fff !important;
+}
+.cb-cta:hover {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--orange-dark) !important;
+}
+
+/* Slide-in entrance for text */
+.cb-slide.is-active .cb-pill   { animation: cbRise .7s .15s ease both; }
+.cb-slide.is-active .cb-title  { animation: cbRise .8s .25s ease both; }
+.cb-slide.is-active .cb-sub    { animation: cbRise .8s .4s ease both; }
+.cb-slide.is-active .cb-cta    { animation: cbRise .8s .55s ease both; }
+@keyframes cbRise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Arrows */
+.cb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.4);
+  background: rgba(0,0,0,.28);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: all .2s ease;
+  backdrop-filter: blur(6px);
+}
+.cb-arrow:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--orange-dark);
+}
+.cb-prev { left: 18px; }
+.cb-next { right: 18px; }
+
+/* Dots */
+.cb-dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+.cb-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,.45);
+  cursor: pointer;
+  padding: 0;
+  transition: all .25s ease;
+}
+.cb-dot:hover { background: rgba(255,255,255,.75); }
+.cb-dot.is-active {
+  background: var(--gold);
+  width: 28px;
+  border-radius: 6px;
+}
+
+/* Progress bar */
+.cb-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(255,255,255,.15);
+  z-index: 2;
+}
+.cb-progress-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--gold);
+  transition: width .1s linear;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .completed-banner { height: clamp(320px, 70vw, 420px); }
+  .cb-content { padding: 24px 20px 56px; }
+  .cb-arrow { width: 40px; height: 40px; font-size: 1.4rem; }
+  .cb-prev { left: 10px; }
+  .cb-next { right: 10px; }
+  .cb-sub { font-size: .9rem; }
+  .cb-pill { font-size: .7rem; padding: 5px 11px; }
+}
+@media (max-width: 420px) {
+  .cb-arrow { display: none; }
+}
+
+/* ================================================================
+   HEADER POLISH — tighter Enquire button + cleaner dropdown arrow
+   ================================================================ */
+
+/* Shrink Enquire Now so it sits proportionally with nav links */
+.nav-cta .btn-primary {
+  padding: 10px 22px !important;
+  font-size: .9rem !important;
+  border-radius: 10px;
+  letter-spacing: .01em;
+  line-height: 1.1;
+}
+
+/* Replace diamond chevron with clean SVG down-arrow (via mask) */
+.has-dropdown > a::after {
+  content: '' !important;
+  width: 10px !important;
+  height: 6px !important;
+  border: 0 !important;
+  background: currentColor !important;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+  transform: none !important;
+  margin-left: 6px !important;
+  transition: transform .2s var(--ease);
+  display: inline-block;
+  flex-shrink: 0;
+}
+.has-dropdown:hover > a::after,
+.has-dropdown:focus-within > a::after,
+.has-dropdown.open > a::after {
+  transform: rotate(180deg) !important;
+}
+
+/* Vertically align all nav items consistently */
+.nav-links { align-items: center; }
+.has-dropdown > a { line-height: 1; }
+
+/* Match Enquire button height to nav link baseline on desktop */
+.nav-cta { align-self: center; }
